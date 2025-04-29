@@ -1,8 +1,8 @@
 //your JS code here. If required.
 const output = document.getElementById("output");
 const btn = document.getElementById("download-images-button");
-
-output.innerHTML = "<div id='loading'>Loading Spinner..</div>"
+// output.appendChild = btn;
+output.innerHTML += "<div id='loading'>Loading Spinner..</div>"
 
 const images = [
   { url: "https://picsum.photos/id/237/200/300" },
@@ -30,13 +30,11 @@ function downloadImages() {
 		imgElements.forEach(img => output.appendChild(img));
 		
 	}).catch((e)=>{
-		output.innerHTML = `<p>Error : ${e}</p>`
+		output.innerHTML = `<div id='error'>Error : ${e}</div>`
 		// console.log(e)
 	})
 	
 }
 
-
-window.addEventListener("DOMContentLoaded", downloadImages);
-
+btn.addEventListener("click", downloadImages);
 // ffffddffdfd1f
